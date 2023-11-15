@@ -10,10 +10,10 @@ router.register(r'ofertas', OfertaViewSet, basename='oferta')
 router.register(r'postulaciones', PostulacionViewSet)
 
 urlpatterns = [
+    path('', homes, name='homes'),
     path('', include(router.urls)),
     path('registro/', RegistroUsuario.as_view(), name='registro'),
     path('crear-oferta/', CrearOfertaView.as_view(), name='crear_oferta'),
-    path('home', homes, name='homes'),
     path('login/', user_login, name='login'),
     path('logout/', logout_view, name='logout')
 
